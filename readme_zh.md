@@ -28,6 +28,8 @@ waifu-duel backup-all
 
 在卡片信息网页的 url 中可以找到 `cid`。 类似 `https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=xxx`.
 
+> 图片格式建议，512x512 像素, PNG 图片格式, RGBA 彩色通道
+
 #### 4. [**建议**] 备份被替换的资源文件
 
 ```shell

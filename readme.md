@@ -30,6 +30,8 @@ To find the card id, you could search in [Yu-Gi-Oh CARD DATABASE](https://www.db
 
 Can find `cid` In the search page url like `https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=xxx`.
 
+> image format recommend: 512x512 pixels, format PNG, mode RGBA
+
 #### 4. [**RECOMMEND**] Backup the images will be replaced
 
 ```shell
