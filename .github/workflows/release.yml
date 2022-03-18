@@ -21,7 +21,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.11
+          python-version: 3.10.2
           cache: pip
 
       - name: Download denpendencies
@@ -31,7 +31,7 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build application
-        run: pyinstall.exe -F main.py
+        run: pyinstaller.exe -F main.py
 
       - name: Make dir
         run: md waifu-duel-${{ steps.tag.outputs.tag }}
@@ -40,10 +40,10 @@ jobs:
         run: echo f | xcopy dist\main.exe waifu-duel-${{ steps.tag.outputs.tag }}\waifu-duel.exe
 
       - name: Copy data
-        run: ehco f | xcopy card_id waifu-duel-${{ steps.tag.outputs.tag }}\card_id
+        run: echo f | xcopy card_id waifu-duel-${{ steps.tag.outputs.tag }}\card_id
 
       - name: Zip
-        run: Compress-Archive waifu-duel waifu-duel-${{ steps.tag.outputs.tag }}.zip
+        run: Compress-Archive waifu-duel-${{ steps.tag.outputs.tag }} waifu-duel-${{ steps.tag.outputs.tag }}.zip
 
       - name: Create Release
         id: create_release
@@ -64,4 +64,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./waifu-duel-${{ steps.tag.outputs.tag }}.zip
           asset_name: waifu-duel-${{ steps.tag.outputs.tag }}.zip
-          asset_cotent_type: application/zip
+          asset_content_type: application/zip
