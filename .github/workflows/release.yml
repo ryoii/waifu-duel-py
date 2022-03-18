@@ -1,0 +1,67 @@
+name: release
+
+on:
+  push:
+    tags: [ 'v*' ]
+
+jobs:
+  build:
+
+    name: Release to Github Release Page
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Get Tag
+        id: tag
+        uses: dawidd6/action-get-tag@v1
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.11
+          cache: pip
+
+      - name: Download denpendencies
+        run: pip install -r requirements.txt
+
+      - name: Download pyinstaller
+        run: pip install pyinstaller
+
+      - name: Build application
+        run: pyinstall.exe -F main.py
+
+      - name: Make dir
+        run: md waifu-duel-${{ steps.tag.outputs.tag }}
+
+      - name: Copy application
+        run: echo f | xcopy dist\main.exe waifu-duel-${{ steps.tag.outputs.tag }}\waifu-duel.exe
+
+      - name: Copy data
+        run: ehco f | xcopy card_id waifu-duel-${{ steps.tag.outputs.tag }}\card_id
+
+      - name: Zip
+        run: Compress-Archive waifu-duel waifu-duel-${{ steps.tag.outputs.tag }}.zip
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: waifu-duel-${{ steps.tag.outputs.tag }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./waifu-duel-${{ steps.tag.outputs.tag }}.zip
+          asset_name: waifu-duel-${{ steps.tag.outputs.tag }}.zip
+          asset_cotent_type: application/zip
