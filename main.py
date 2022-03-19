@@ -1,5 +1,6 @@
 import sys
 
+import common
 from command import *
 
 
@@ -21,6 +22,8 @@ def main(args):
         backup_in_need(work_dir)
     elif command == "build":
         solve_img(work_dir)
+    elif command == "md":
+        os.startfile(common.get_md_data_path())
     else:
         show_help()
 
