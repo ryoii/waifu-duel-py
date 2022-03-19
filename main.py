@@ -11,7 +11,7 @@ def main(args):
     command = args[0]
     work_dir = args[1]
 
-    if command == "backupall":
+    if command == "backup-all":
         if len(args) <= 2:
             backup_path = None
         else:
