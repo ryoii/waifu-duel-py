@@ -53,7 +53,7 @@ def backup_all(dest_dir, backup_path):
         current += 1
         progress = current / total
         cnt = 50 * current // total
-        print(f"{'=' * cnt}>{' ' * (50 - cnt)} {round(progress * 100, 2)}%\r")
+        print(f"\r{'=' * cnt}>{' ' * (50 - cnt)} {round(progress * 100, 2)}%", end="")
 
 
 def is_number_file(work_dir, file_name):
@@ -119,4 +119,4 @@ def solve_img(work_dir):
         current += 1
         progress = current / total
         cnt = 50 * current // total
-        print(f"{'=' * cnt}>{' ' * (50 - cnt)} {round(progress * 100, 2)}%\r")
+        print(f"\r{'=' * cnt}>{' ' * (50 - cnt)} {round(progress * 100, 2)}%", end="")
