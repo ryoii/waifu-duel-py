@@ -93,6 +93,7 @@ def solve_single_img(base_path, file_id, img_file, dest_dir):
         if obj.type.name == 'Texture2D':
             data = obj.read()
             img = Image.open(img_file).convert(mode="RGBA")
+            img = img.resize((512, 512), Image.ANTIALIAS)
             data.image = img
             data.save()
     with open(os.path.join(dest_parent, file_id), 'wb') as f:
