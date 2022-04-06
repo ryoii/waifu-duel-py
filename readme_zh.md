@@ -54,7 +54,11 @@ waifu-duel build [work directory]
 
 将你提供的图片压缩成资源文件，并按结构输出到 `output` 目录下。
 
-#### 6. 替换数据
+#### 6. 安装数据
+
+```shell
+waifu-duel install [work directory]
+```
 
 复制工作目录下 `output` 文件夹里所有数据到 `steam/steamapps/common/Yu-Gi-Oh! Master Duel/LocalData/xxxxx/0000`
 

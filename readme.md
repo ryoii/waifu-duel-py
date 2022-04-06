@@ -56,7 +56,11 @@ waifu-duel build [work directory]
 
 Compress your images into the asset data, and output to `output` directory.
 
-#### 6. Replace data
+#### 6. Install data
+
+```shell
+waifu-duel install [work directory]
+```
 
 Copy all files in `work direcoty/ouput` to game data location `steam/steamapps/common/Yu-Gi-Oh! Master Duel/LocalData/xxxxx/0000`
 
