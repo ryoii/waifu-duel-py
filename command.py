@@ -124,3 +124,11 @@ def solve_img(work_dir):
         progress = current / total
         cnt = 50 * current // total
         print(f"\r{'=' * cnt}>{' ' * (50 - cnt)} {round(progress * 100, 2)}%", end="")
+
+
+def install(work_dir):
+    base_path = get_md_data_path()
+    output_dir = os.path.join(work_dir, "output")
+
+    shutil.copytree(output_dir, base_path)
+    print("finished.")

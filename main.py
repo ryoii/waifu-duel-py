@@ -35,6 +35,10 @@ def main(args):
         check_args(args, expect_len=1)
         work_dir = args[0]
         solve_img(work_dir)
+    elif command == "install":
+        check_args(args, expect_len=1)
+        work_dir = args[0]
+        install(work_dir)
     elif command == "md":
         check_args(args, expect_len=1)
         os.startfile(common.get_md_data_path())
