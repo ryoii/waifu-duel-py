@@ -67,10 +67,13 @@ def get_img_files(work_dir):
     return [f for f in os.listdir(work_dir) if is_number_file(work_dir, f)]
 
 
-def backup_in_need(work_dir):
+def backup_in_need(work_dir, backup_path):
     img_files = get_img_files(work_dir)
 
-    base_path = get_md_data_path()
+    if backup_path is None:
+        base_path = get_md_data_path()
+    else:
+        base_path = backup_path
     card_data = load_card_data()
 
     for f in img_files:
