@@ -1,3 +1,4 @@
 unitypy~=1.7.43
 future~=0.18.2
 pillow~=9.0.1
+requests~=2.27.1

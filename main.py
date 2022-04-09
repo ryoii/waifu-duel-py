@@ -39,6 +39,10 @@ def main(args):
         check_args(args, expect_len=1)
         work_dir = args[0]
         install(work_dir)
+    elif command == "search":
+        check_args(args, expect_len=1)
+        keyword = args[0]
+        search(keyword)
     elif command == "md":
         check_args(args, expect_len=1)
         os.startfile(common.get_md_data_path())

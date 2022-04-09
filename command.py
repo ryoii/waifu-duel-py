@@ -1,8 +1,10 @@
+import json
 import os.path
 import re
 import shutil
 
 import UnityPy
+import requests
 from PIL import Image
 
 from common import load_card_data, get_md_data_path
@@ -132,3 +134,13 @@ def install(work_dir):
 
     shutil.copytree(output_dir, base_path)
     print("finished.")
+
+def search(keyword):
+    api = "https://ygocdb.com/api/v0/?search="
+    res = requests.get(api + keyword)
+    cards = json.loads(res.content.decode("UTF8"))["result"]
+    if len(cards) > 0:
+        for card in cards:
+            print("{: <8}{: <30}   {: <30}   {}".format(card["cid"], card["jp_name"], card["cn_name"], card.get("en_name", "")))
+    else:
+        print("Not found.")
