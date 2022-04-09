@@ -26,9 +26,7 @@ The work directory will be a pack for a single theme. For example, you can make 
 
 Put the images into the work directory and Rename the image to its card id.
 
-To find the card id, you could search in [Yu-Gi-Oh CARD DATABASE](https://www.db.yugioh-card.com/yugiohdb/). 
-
-Can find `cid` In the search page url like `https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=xxx`.
+Search card id by command `waifu-duel search [keyword]` (Japanese, Chinese, English are supported. Datasource: [ygocdb](https://ygocdb.com/))
 
 > image format recommend: 512x512 pixels, format PNG, mode RGBA
 > 
@@ -68,7 +66,3 @@ Copy all files in `work direcoty/ouput` to game data location `steam/steamapps/c
 ## Known issues
 
 + Asset data size becomes larger, but it works. It seems to be the problem of image compression algorithm.
-
-## TODO
-
-+ Search card id in application

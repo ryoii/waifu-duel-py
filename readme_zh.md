@@ -24,9 +24,7 @@ waifu-duel backup-all
 
 将替换的卡图放入工作目录，并命名为对应替换卡片的`card id`。
 
-可以在 [Yu-Gi-Oh CARD DATABASE](https://www.db.yugioh-card.com/yugiohdb/) 中搜索替换的卡片信息。
-
-在卡片信息网页的 url 中可以找到 `cid`。 类似 `https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=xxx`.
+可以使用 `waifu-duel search [keyword]` 检索卡片信息和 `card id`（支持日文、中文、英文，数据来源：[ygocdb](https://ygocdb.com/)）
 
 > 图片格式建议，512x512 像素, PNG 图片格式, RGBA 彩色通道
 > 
@@ -66,10 +64,6 @@ waifu-duel install [work directory]
 ## 已知问题
 
 + 生成的资源文件偏大，可能是图片压缩算法的问题
-
-## 鸽子列表
-
-+ 直接在程序中检索 card id
 
 ## 免责声明
 
