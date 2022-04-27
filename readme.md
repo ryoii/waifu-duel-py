@@ -35,7 +35,7 @@ Search card id by command `waifu-duel search [keyword]` (Japanese, Chinese, Engl
 #### 4. [**RECOMMEND**] Backup the images will be replaced
 
 ```shell
-waifu-duel backup [work directory]
+waifu-duel backup [work directory] [backup-all directory]
 ```
 
 Back up the asset data to work directory according to the card id you set in the work directory.
