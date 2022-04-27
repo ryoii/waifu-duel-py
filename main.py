@@ -7,7 +7,7 @@ from command import *
 def check_args(args, expect_len):
     if len(args) < expect_len:
         show_help()
-        exit(0)
+        sys.exit(0)
 
 
 def main(args):
