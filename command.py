@@ -22,7 +22,9 @@ def show_help():
           "    Build the asset data that compressed with the images you supplied. And output to [work directory]/output.\n"
           "    [work directory]  ---  Build the asset data in need according to the images you supplied.")
     print("install [work directory]\n"
-          "    Copy all files in output dir to game data location")
+          "    Copy all files in output dir to game data location.")
+    print("search [card name]\n"
+          "    Search card id with the card name, fuzzy searching is supported.")
 
 def backup_single_file(base_path, file_id, dest_dir):
     key = file_id[:2]
