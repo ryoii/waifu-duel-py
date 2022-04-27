@@ -17,18 +17,11 @@ def main(args):
 
     if command == "backup-all":
         check_args(args, expect_len=1)
-        if len(args) <= 1:
-            backup_path = None
-        else:
-            backup_path = args[1]
         work_dir = args[0]
-        backup_all(work_dir, backup_path)
+        backup_all(work_dir)
     elif command == "backup":
-        check_args(args, expect_len=1)
-        if len(args) <= 1:
-            backup_path = None
-        else:
-            backup_path = args[1]
+        check_args(args, expect_len=2)
+        backup_path = args[1]
         work_dir = args[0]
         backup_in_need(work_dir, backup_path)
     elif command == "build":

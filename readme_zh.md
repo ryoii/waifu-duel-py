@@ -35,16 +35,12 @@ waifu-duel backup-all
 #### 4. [**建议**] 备份被替换的资源文件
 
 ```shell
-waifu-duel backup [work directory]
+waifu-duel backup [work directory] [backup-all directory]
 ```
 
 将要被替换的资源文件备份到工作目录下，所备份的文件会根据你提供的 card id 进行选择。
 
-如果游戏中的资源文件已被替换过，可以通过以下命令从 “步骤1” 中备份的文件中提取备份。
-
-```shell
-waifu-duel backup [work directory] [backup-all directory]
-```
+如果游戏中的资源文件已被替换过，可以通过该命令从 “步骤1” 中备份的文件中提取备份。
 
 #### 5. 生成资源包
 
