@@ -21,7 +21,8 @@ def show_help():
     print("build [work directory]\n"
           "    Build the asset data that compressed with the images you supplied. And output to [work directory]/output.\n"
           "    [work directory]  ---  Build the asset data in need according to the images you supplied.")
-
+    print("install [work directory]\n"
+          "    Copy all files in output dir to game data location")
 
 def backup_single_file(base_path, file_id, dest_dir):
     key = file_id[:2]
